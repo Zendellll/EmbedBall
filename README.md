@@ -46,6 +46,7 @@ All major hyperparameters and file paths are managed in config.py via a dataclas
 ### Running the Pipeline
 From within the football_ae/ directory, simply run:<br>
 <code>python main.py</code><br>
+
 This will:<br>
 * Load & clean data from csv_root_dir.<br>
 * Split the data into a training set (80% by default) and test set (20%).<br>
