@@ -59,15 +59,8 @@ This will:<br>
 ## Logging & Outputs
 
 Logs:<br>
-View real-time training progress in your console.
-The default format is [TIMESTAMP] [LEVEL] [MODULE] - message.
-Artifacts Folder:
-Model: pretrained_autoencoder.pth
-Loss Plot: loss_plot.png
-Dimensionality Reduction Plots:
-pca_visualization.png
-tsne_visualization.png
-umap_visualization.png
+View real-time training progress in your console.<br>
+The default format is [TIMESTAMP] [LEVEL] [MODULE] - [message].<br>
 
 ## Contributing
 We welcome contributions to improve this project. Please submit issues or pull requests on the project's GitHub repository.<br>
