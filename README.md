@@ -67,8 +67,6 @@ Dimensionality Reduction Plots:
 pca_visualization.png
 tsne_visualization.png
 umap_visualization.png
-This ensures reproducibility and consistency when reviewing experiments.
-Extending the Project
 
 ## Contributing
 We welcome contributions to improve this project. Please submit issues or pull requests on the project's GitHub repository.<br>
