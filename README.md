@@ -1,10 +1,10 @@
-#EmbedBall
-##Overview
+# EmbedBall
+## Overview
 Football_AE is a deep learning project for embedding event-level data from football (soccer) matches. 
 
 Specifically, we trained an autoencoder on tabular event data (tokenized soccer events based on StatsBomb Open Data), aiming to learn compact representations (embeddings) that capture the structure of football events.
 
-##Directories
+## Directories
 
 * artifacts/ - Folder for storing outputs (plots, trained models, etc.) <br>
 * config.py - Central config file for hyperparameters & I/O paths.<br>
@@ -16,14 +16,14 @@ Specifically, we trained an autoencoder on tabular event data (tokenized soccer 
 * training.py - Autoencoder training routine (train loop, dataset prep, etc.)
 * visualization.py - Dimensionality reduction & plotting functions.<br>
 
-##Installation & Requirements
+## Installation & Requirements
 * Clone this repository.<br>
 * Ensure Python 3.7+ (3.8+ recommended).<br>
 * Install dependencies:<br>
 <code>pip install -r requirements.txt</code><br>
 * This ensures you have the libraries needed: pandas, numpy, torch, matplotlib, scikit-learn, umap-learn, and tqdm.
 
-##Data Preparation
+## Data Preparation
 
 Raw CSVs: The code expects multiple .json.csv files in the specified csv_root_dir.<br>
 File Naming Convention: The provided code parses the substring .json.csv as an event-level CSV. Each file name is expected to follow the format:<br>
@@ -38,12 +38,12 @@ statsbomb_matches_csv/<br>
 You can use our dataset (StatsBomb Open Data, tokenized), or upload your own. <br>
 If you use your own data, make sure it is structured according to https://github.com/Amit-bt-technion/statsbomb_football_embeddings)
 
-##Usage
+## Usage
 
-###Configuration
+### Configuration
 All major hyperparameters and file paths are managed in config.py via a dataclass called Config. <br>
 
-###Running the Pipeline
+### Running the Pipeline
 From within the football_ae/ directory, simply run:<br>
 <code>python main.py</code><br>
 This will:<br>
@@ -55,7 +55,7 @@ This will:<br>
 * Compare reconstruction quality on a random sample of events.<br>
 * Perform dimensionality reduction (PCA, t-SNE, and UMAP) and save the resulting plots.<br>
 
-##Logging & Outputs
+## Logging & Outputs
 
 Logs:<br>
 View real-time training progress in your console.
@@ -70,9 +70,10 @@ umap_visualization.png
 This ensures reproducibility and consistency when reviewing experiments.
 Extending the Project
 
-##Contributing
+## Contributing
 We welcome contributions to improve this project. Please submit issues or pull requests on the project's GitHub repository.<br>
 
-##License
+## License
 This project is licensed under the MIT License.<br>
+
 Thank you for using Football_AE!
