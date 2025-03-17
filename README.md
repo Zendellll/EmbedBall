@@ -30,7 +30,7 @@ File Naming Convention: The provided code parses the substring .json.csv as an e
 <code>{match_id}.json.csv</code><br>
 Storage Location: Place all these CSV files in the folder of your choosing (default is csv/). Update the Config accordingly if you move them somewhere else.<br>
 Example:
-statsbomb_matches_csv/<br>
+csv/<br>
  ├── 15956.json.csv<br>
  ├── 16012.json.csv<br>
  ├── ...<br>
