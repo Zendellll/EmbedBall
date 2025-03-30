@@ -29,7 +29,7 @@ Raw CSVs: The code expects multiple .json.csv files in the specified csv_root_di
 File Naming Convention: The provided code parses the substring .json.csv as an event-level CSV. Each file name is expected to follow the format:<br>
 <code>{match_id}.json.csv</code><br>
 Storage Location: Place all these CSV files in the folder of your choosing (default is csv/). Update the Config accordingly if you move them somewhere else.<br>
-Example:
+Example:<br>
 csv/<br>
  ├── 15956.json.csv<br>
  ├── 16012.json.csv<br>
@@ -44,7 +44,7 @@ If you use your own data, make sure it is structured according to https://github
 All major hyperparameters and file paths are managed in config.py via a dataclass called Config. <br>
 
 ### Running the Pipeline
-From within the football_ae/ directory, simply run:<br>
+From within the football_ae/ directory, run:<br>
 <code>python main.py</code><br>
 
 This will:<br>
@@ -54,7 +54,29 @@ This will:<br>
 * Save the trained model and training loss plot to the artifacts/ folder.<br>
 * Generate embeddings for the test set.<br>
 * Compare reconstruction quality on a random sample of events.<br>
+Make sure to set <code>num_events_to_compare</code> in config.py
 * Perform dimensionality reduction (PCA, t-SNE, and UMAP) and save the resulting plots.<br>
+
+### Example usage
+The following code snippet demonstrates the main pipeline - data preparation, model initialization and training:
+```python
+# Prepare data
+X_tensor, train_dataset, test_dataset = prepare_data(df)
+
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=batch_size)
+
+# Initialize mpdel
+input_dim = len([col for col in df.columns])
+model_mse = EventAutoencoder(input_dim=input_dim, latent_dim=config.latent_dim)
+
+# Train model
+model_mse = train_model(train_loader, model_mse, test_loader, num_epochs=num_epochs, criterion=nn.MSELoss())
+
+# Test model
+embeddings_mse = get_embeddings(model_mse, test_loader)
+}
+```
 
 ## Logging & Outputs
 
@@ -65,7 +87,10 @@ The default format is [TIMESTAMP] [LEVEL] [MODULE] - [message].<br>
 ## Contributing
 We welcome contributions to improve this project. Please submit issues or pull requests on the project's GitHub repository.<br>
 
+## Repository Authors
+Ilan Zendel & Amit Ben-Tzvi
+
 ## License
 This project is licensed under the MIT License.<br>
 
-Thank you for using Football_AE!
+Thank you for using EmbedBall!

@@ -71,10 +71,9 @@ def main(config: Config) -> None:
     embeddings = get_embeddings(model, test_loader)
 
     # 6. Compare some reconstructions
-    num_events_to_compare = 5
-    sample_indices = np.random.choice(len(X_tensor), size=num_events_to_compare, replace=False)
+    sample_indices = np.random.choice(len(X_tensor), size=config.num_events_to_compare, replace=False)
     sample_inputs = X_tensor[sample_indices]
-    compare_reconstructions(model, sample_inputs, num_events=num_events_to_compare)
+    compare_reconstructions(model, sample_inputs, num_events=config.num_events_to_compare)
 
     # 7. Visualization / dimension reduction
     # First column in df represents event_type IDs or :

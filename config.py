@@ -27,6 +27,7 @@ class Config:
     loss_plot_path: str = "artifacts/loss_plot.png"
 
     # Visualization
+    num_events_to_compare: int = 5
     pca_plot_path: str = "artifacts/pca_visualization.png"
     tsne_plot_path: str = "artifacts/tsne_visualization.png"
     umap_plot_path: str = "artifacts/umap_visualization.png"
