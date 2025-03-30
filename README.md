@@ -84,6 +84,14 @@ Logs:<br>
 View real-time training progress in your console.<br>
 The default format is [TIMESTAMP] [LEVEL] [MODULE] - [message].<br>
 
+Plots:<br>
+These are the resulting plots from training an autoencoder on a subset (1/5) of the StatsBomb dataset -<br>
+PCA (32->2), colored by event_id feature -<br>
+![static/pca.png](static/pca.png)
+
+T-SNE colored by event_id feature -<br>
+![static/tsne.png](static/tsne.png)
+
 ## Contributing
 We welcome contributions to improve this project. Please submit issues or pull requests on the project's GitHub repository.<br>
 
